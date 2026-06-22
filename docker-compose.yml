@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  api:
+    build: .
+    container_name: api_node
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+      - postgres
+    environment:
+      - PORT=3000
+      - JWT_SECRET=segredo123
+      - MONGO_URL=mongodb://mongo:27017/api
+
+  mongo:
+    image: mongo
+    container_name: mongo_db
+    ports:
+      - "27017:27017"
+
+  postgres:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: usersdb
+    ports:
+      - "5432:5432"
