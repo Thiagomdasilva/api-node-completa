@@ -192,3 +192,60 @@ matricula: 202322140
 ✔ Swagger documentado
 ✔ Testes implementados
 ✔ Docker configurado
+
+📦 CÓDIGO FONTE DA API (ESTRUTURA OFICIAL)
+api-node-completa/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── README.md
+├── package.json
+├── package-lock.json
+├── jest.config.js
+├── .gitignore
+│
+├── src/
+│   ├── app.js
+│   ├── server.js
+│
+│   ├── config/
+│   │   ├── dbMongo.js
+│   │   └── dbPostgres.js
+│
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── carroController.js
+│   │   ├── motoController.js
+│   │   ├── roupaController.js
+│   │   └── userController.js
+│
+│   ├── middlewares/
+│   │   ├── authMiddleware.js
+│   │   └── roleMiddleware.js
+│
+│   ├── models/
+│   │   ├── mongo/
+│   │   │   ├── Carro.js
+│   │   │   ├── Moto.js
+│   │   │   └── MarcaRoupa.js
+│   │   │
+│   │   ├── nosql/
+│   │   │   └── Carro.js
+│   │   │
+│   │   └── sql/
+│   │       └── User.js
+│
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   ├── carroRoutes.js
+│   │   ├── motoRoutes.js
+│   │   ├── roupaRoutes.js
+│   │   └── userRoutes.js
+│
+│   ├── docs/
+│   │   └── swagger.js
+│
+└── tests/
+    ├── app.test.js
+    └── carro.test.js
+
